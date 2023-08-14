@@ -25,7 +25,13 @@ const userSchema = new mongoose.Schema({
         ref: 'User'
       }
     ]
-  });
+  },{
+    toJSON: {
+        virtuals: true,
+        getters: true
+    },
+    id: false
+});
 
   // Create a virtual property 'friendCount'
 userSchema.virtual('friendCount').get(function () {
