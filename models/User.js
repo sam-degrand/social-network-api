@@ -26,3 +26,12 @@ const userSchema = new mongoose.Schema({
       }
     ]
   });
+
+  // Create a virtual property 'friendCount'
+userSchema.virtual('friendCount').get(function () {
+    return this.friends.length;
+  });
+  
+  const User = model('User', userSchema);
+  
+  module.exports = User;
