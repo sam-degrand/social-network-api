@@ -16,3 +16,5 @@ router
   .get(getThoughtById)
   .put(updateThought)
   .delete(deleteThought);
+
+  module.exports = router;
